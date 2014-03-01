@@ -1,19 +1,7 @@
 <html>
 <head>
 <title>Test</title>
-<!--<html lang="en">
-<script src="javascript/head.min.js"></script>  
-
-<script>
-            head.load("http://code.jquery.com/jquery-1.9.1.min.js");
-</script>
-
-	<meta charset="utf-8">
-	<title>Test</title>
-	
-	<link rel="stylesheet" href="jquery/development-bundle/themes/base/jquery.ui.all.css">
-	<link rel="stylesheet" href="jquery\development-bundle\demos/demos.css">-->
-	
+<link rel="stylesheet" type="text/css" href="css/start.css">	
 </head>
 
 <?php
@@ -23,7 +11,9 @@ if(!array_key_exists('fname', $_POST)){
 		$_SESSION['error1']="Unauthorised Access";
 		session_write_close();
 		echo("<script >location.href = 'index.php';</script>");
-		}
+	}
+	else ///
+	echo("<div id='tex' class='start'>Hi, ".$_POST['fname']."<br>");
 try {
     $conn = new PDO('mysql:host=localhost;dbname=exam3', 'root', '');	
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -57,6 +47,7 @@ session_write_close();
 Rules: <br>
 1. The examination will consist of 30 multiple questions.<br>
 2. Duration of examination will be 20 minutes.<br>
-3. Each correct answer will give you 3 mark and each wrong answer negative 2 marks.<br>
-<a href = "exam_st.php">Start</a>
+3. Each correct answer will give you 3 mark and each wrong answer negative 2 marks.<br><br></div>
+<div style="width:300px;">
+<div id ='but' class='but1'><a href = "exam_st.php">Start</a></div>
 </html> 

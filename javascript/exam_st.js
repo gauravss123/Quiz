@@ -1,5 +1,8 @@
 var mar = 0;
 var qeu= [];
+function submit(){
+document.getElementById("question").submit();
+}
 $(document).ready(function () {
 			var i;
 			for(i=0;i<=29;i++) // to hide reset response text
@@ -50,7 +53,7 @@ else {
  }
 
 
-   document.getElementById('time').firstChild.nodeValue=mins+':'+secs;
+   document.getElementById('time').firstChild.nodeValue='Time Remaining : '+mins+':'+secs;
    cd=setTimeout('tenMinutes()',1000);
 }
 //function to display "reset" option on answering question
@@ -61,7 +64,7 @@ $('body').on('click','input:radio',(function() {
 
   if (((typeof(qeu[n])=== 'undefined'||qeu[n]!=1))){
 	++mar;
-	document.getElementById('mark').firstChild.nodeValue=mar+'\/30';
+	document.getElementById('mark').firstChild.nodeValue='Questions Answered : '+mar+'\/30';
   }
   qeu[n]=1;
 }
@@ -88,6 +91,6 @@ var name = document.getElementsByName(radio);
 	qeu[n]=0;
 	
 	--mar;
-    document.getElementById('mark').firstChild.nodeValue=mar+'\/30';
+    document.getElementById('mark').firstChild.nodeValue='Questions Answered : '+mar+'\/30';
 
 	}

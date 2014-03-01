@@ -13,10 +13,8 @@ function validateFormOnSubmit(event) {
 	var reason = "";
 
    reason += validateEmpty(this.fname,1);
-   reason += validateEmpty(this.contact,2);
    reason += validateLength(this.contact,3);
-  
-      
+     
   if (reason != "") {
     event.preventDefault();
   }
@@ -24,26 +22,30 @@ function validateFormOnSubmit(event) {
   }
 //function to validate field is not empty  
 function validateEmpty(fld,k) {
-    var error = "";
-	var no = "#"+k;;
-    if (fld.value.length == 0) {
+	var error="";
+    var no = "#"+k;
+    if (fld.value.length ==0) {
         fld.style.background = 'Yellow'; 
-		error ="erroer";
+		var error ="Error";
+		var w = (.35)*window.innerWidth;
+		$("#43").width(w);
 		$(no).show();
-    } else {
+    }
+	else {
         fld.style.background = 'White';
 		$(no).hide();
-    }
-    return error;  
+	}
+	return error;
 }
 //function to validate contact number is not less than 10 digits
 function validateLength(fld,k) {
-    var error = "";
-	var no = "#"+k;;
- 
+	var error="";
+	var no = "#"+k;
     if (fld.value.length <10) {
         fld.style.background = 'Yellow'; 
-		error ="Error";
+		var error ="Error";
+		var w = (.52)*window.innerWidth;
+		$("#43").width(w);
 		$(no).show();
     }
 	else {
@@ -68,3 +70,6 @@ function validateLength(fld,k) {
            
             return ret;
         }
+	function resize(){
+	
+	}

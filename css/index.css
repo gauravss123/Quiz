@@ -1,0 +1,58 @@
+body{
+background-color:#dddddd;
+color:#fffffff
+}
+
+.index
+{
+position: relative;
+font-size:1.5vw;
+background:#00a2fe;
+width:30vw;
+top:50%;
+left:50%;
+
+
+}
+
+input[type="submit"]{
+background:#00a2fe;
+font-size:1.5vw;
+box-shadow: 2px 2px 1.5p #888888
+
+}
+
+input[type="text"]{
+background-color:#eeffee;
+border:2px solid #ccc;
+font-size:1.5vw;
+}
+
+input[type="submit"]:hover{
+background:#00a2fe;
+
+}
+input[type="submit"]:active{
+background:#0062ae;
+
+}
+
+.box {
+    width:32vw;
+    height:10vw;
+    background:#00a2fe;
+    position:fixed;
+    margin-left:-150px; /* half of width */
+    margin-top:-150px;  /* half of height */
+    top:43%;
+    left:43%;
+	box-shadow: 10px 10px 5px #888888;
+	
+}
+
+.but{
+position:fixed;
+top:53vh;
+left:45vw;
+box-shadow: 2px 2px 1px #88888888;
+}

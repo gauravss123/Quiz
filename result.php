@@ -3,27 +3,28 @@
 <script src="javascript/head.min.js"></script>  <!-- to handle script loading functions-->
 <script>
             head.load("http://code.jquery.com/jquery-1.9.1.min.js","javascript/result.js");
-</script
+</script>
+<link rel="stylesheet" type="text/css" href="css/result.css">
 </head>
 <body>
 
 <?php
 session_start();
-echo($_SESSION['m']);
-$q=$_SESSION['m'];
 if(!array_key_exists('ans',$_SESSION)){
 
 		$_SESSION['error']="Unauthorised Access";
-		
 		echo("<script >location.href = 'index.php';</script>");
-		
+		echo("<div class='result'>Hi,".$_SESSION['m']."<br>");
+		$q=$_SESSION['m'];
 		}
 else{
 $ans = array();
 $ans = $_SESSION['ans'];
 unset($_SESSION['ans']);
 }
-$marks=NULL;
+
+echo("<div class='result'>Hi, ".$_SESSION['m']."<br>");
+$marks=-10;
 for($i=0;$i<30;$i++)
 {
 	if(isset($_POST[$i]))
@@ -38,9 +39,9 @@ for($i=0;$i<30;$i++)
 
 }
 if ($marks!=NULL)
-	echo("<br>Marks obtained are ".$marks."<br>");
+	echo("<br>You have obtained  ".$marks." marks. <br></div>");
 else 
-	echo("No questions answered <br>");
+	echo("You have not answered any questions. <br></div>");
 
 $con=mysqli_connect("localhost","root","","exam3");
  if (mysqli_connect_errno())
@@ -66,8 +67,8 @@ $query->execute();
 
 ?>
 <div style="width:300px;">
-<!--<div id="notice">This Website will reset in:</div>-->
-<div id="time">60:00</div></div>
+<br>
+<div id="time" class="result" style= "text-align:center";>Resetting in 60:00</div></div>
 
 </body>
 </html>

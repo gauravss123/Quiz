@@ -1,0 +1,16 @@
+body
+{
+background:dcdcdc;
+}
+.result{
+border:2px solid #ccc ;
+position:relative;
+color:#ffffff;
+top:35vh;
+left:35vw;
+background:#00bde7;
+width:30vw;
+font-size:2vw;
+border-radius:4px;
+box-shadow: 10px 10px 5px #888888;
+}

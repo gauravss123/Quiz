@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <script src="javascript/head.min.js"></script>  <!-- to handle script loading functions-->
@@ -5,19 +6,20 @@
             head.load("http://code.jquery.com/jquery-1.9.1.min.js","javascript/exam_st.js");
 </script
 <link rel="stylesheet" href="jquery/development-bundle/demos/demos.css">
+<link rel="stylesheet" href="css/exam_st.css" type="text/css">
+
 <title>Test</title>
 </head>
 <body>
-<div id="time">60:00</div></div>
-<div id="mark">0/30</div>
-
+<div  class="pos_fixed" id="time">Time Remaining : 60:00</div><
+<div  class="pos_fixed1" id="mark">Questions Answered : 0/30</div>
 <?php
 session_start();
 if(!array_key_exists("m",$_SESSION)){
 		$_SESSION['error1']="Unauthorised Access";
-		
+
 		echo("<script >location.href = 'index.php';</script>");
-		
+
 		}
 $que=array();
 //retrieve 30 random question number
@@ -44,7 +46,7 @@ $result= mysqli_query($con,"SELECT * FROM que WHERE sr in ($que[0],$que[1],$que[
 if(!$result)
 	echo (mysqli_error($con));
 
-echo("<form name ='input' id='question' action = 'result.php' method = 'POST'>");
+echo("<form name ='input' id='question' action = 'result.php' method = 'POST'><div class='qu_e'>");
 while($row = mysqli_fetch_array($result,MYSQLI_NUM))
 {
 	echo(($i+1)." ".$row[1]."<br>");
@@ -59,8 +61,7 @@ while($row = mysqli_fetch_array($result,MYSQLI_NUM))
 }
 
 
-echo("<input type = 'submit' onclick='sub'>
-</form>");
+echo("<div class='butt'><input type='submit' value='SUBMIT'></div></div></form>");
 
 $_SESSION["ans"]=$z;
 

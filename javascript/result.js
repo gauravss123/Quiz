@@ -35,6 +35,6 @@ else {
 
 
 
-   document.getElementById('time').firstChild.nodeValue=mins+':'+secs;
+   document.getElementById('time').firstChild.nodeValue='Resetting in '+mins+':'+secs;
    cd=setTimeout('tenMinutes()',1000);
 }

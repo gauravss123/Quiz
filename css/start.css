@@ -1,0 +1,40 @@
+body{
+background-color:#cccccc;
+}
+
+a:link {color:#ffffff;
+border:2px solid #ccc ;
+text-decoration:none;
+border: solid 1px #ccc; 
+    padding:0.4em 0.7em; 
+	color:white;
+	border-radius: 10px;
+ /*To make the state change a little real*/
+	transition: all 200ms linear;
+	background-color: #00a2fe;
+	cursor: pointer;
+	font-size:1.8vw;
+	box-shadow: 10px 10px 5px #888888;
+}  
+a:visited {color:#ffffff;border:2px solid #ccc ;
+background:#00bde7}
+a:hover {background:#0082ce;}  
+a:active {background:#0062ae;}
+
+.start{
+border:2px solid #ccc ;
+position:relative;
+color:#ffffff;
+top:30vh;
+left:20vw;
+background:#00bde7;
+width:60vw;
+font-size:2vw;
+border-radius:4px;
+box-shadow: 10px 10px 5px #888888;
+}
+
+.but1{border:2px solid #ccc ;
+position:absolute;
+top:70vh;
+left:45vw;	}
