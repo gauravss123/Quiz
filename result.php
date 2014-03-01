@@ -9,12 +9,14 @@
 
 <?php
 session_start();
+echo($_SESSION['m']);
+$q=$_SESSION['m'];
 if(!array_key_exists('ans',$_SESSION)){
 
 		$_SESSION['error']="Unauthorised Access";
-		session_write_close();
+		
 		echo("<script >location.href = 'index.php';</script>");
-		session_write_close();
+		
 		}
 else{
 $ans = array();
@@ -56,11 +58,10 @@ try {
 } catch(PDOException $e) {
     echo 'ERROR: ' . $e->getMessage();
 }
-$sql = "UPDATE user SET MARKS=:l , tm=:g WHERE NAME = :k";
+$sql = "UPDATE user SET MARKS=:l WHERE NAME = :k";
 $query = $conn->prepare($sql);
 $query->bindParam(':l', $marks,PDO::PARAM_INT);
-$query->bindParam(':k',$mob,PDO::PARAM_STR);
-$query->bindParam(':g',$k,PDO::PARAM_STR);
+$query->bindParam(':k',$q,PDO::PARAM_STR);
 $query->execute();
 
 ?>

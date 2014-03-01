@@ -50,7 +50,7 @@ catch(PDOException $e){
 		}
 }
 
-
+session_start();
 $_SESSION["m"]=$_POST['fname'];
 session_write_close();
 ?>

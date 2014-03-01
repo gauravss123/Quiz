@@ -5,7 +5,6 @@ create table exam3.user
 ID int primary key auto_increment,
 MOBILE varchar(10) unique,
 MARKS varchar(10),
-tm varchar(30),
 NAME varchar(255) not null
 );
 

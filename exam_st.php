@@ -9,14 +9,15 @@
 </head>
 <body>
 <div id="time">60:00</div></div>
+<div id="mark">0/30</div>
 
 <?php
 session_start();
-if(!array_key_exists('m',$_SESSION)){
-		$_SESSION['error']="Unauthorised Access";
-		session_write_close();
+if(!array_key_exists("m",$_SESSION)){
+		$_SESSION['error1']="Unauthorised Access";
+		
 		echo("<script >location.href = 'index.php';</script>");
-		session_write_close();
+		
 		}
 $que=array();
 //retrieve 30 random question number
@@ -62,7 +63,7 @@ echo("<input type = 'submit' onclick='sub'>
 </form>");
 
 $_SESSION["ans"]=$z;
-session_write_close();
+
 ?>
 </body>
 </html>

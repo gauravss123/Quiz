@@ -1,3 +1,5 @@
+var mar = 0;
+var qeu= [];
 $(document).ready(function () {
 			var i;
 			for(i=0;i<=29;i++) // to hide reset response text
@@ -24,9 +26,6 @@ window.onload=function() {
  //function for timer
 function tenMinutes(){
    s--;   k--;
-/*if(k==0)
- { document.forms["questions"].submit();
- }*/
  if(m==0&&s==0)
  { document.getElementById("question").submit();
  }
@@ -59,10 +58,18 @@ $('body').on('click','input:radio',(function() {
   var n = $(this).attr('name');
   var k ='#' + n;
   $(k).show(400);
-}));
+
+  if (((typeof(qeu[n])=== 'undefined'||qeu[n]!=1))){
+	++mar;
+	document.getElementById('mark').firstChild.nodeValue=mar+'\/30';
+  }
+  qeu[n]=1;
+}
+ )
+) 
 //functionality of "reset" defined
 function clear(radio) {
-    //alert(radio); 
+    
 var name = document.getElementsByName(radio);
 	for (i=0; i < name.length; i++) 
 	{ 
@@ -75,4 +82,12 @@ var name = document.getElementsByName(radio);
 		} 
 		
 	}
+	n=name.slice(1); // remove "#" from name
+	
+	
+	qeu[n]=0;
+	
+	--mar;
+    document.getElementById('mark').firstChild.nodeValue=mar+'\/30';
+
 	}
